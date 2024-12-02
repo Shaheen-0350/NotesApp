@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Notes</title>
+    <link rel="stylesheet" href="/stylesheets/profile.css" />
+</head>
+<body>
+    <div>
+        <a href="/logout" id="logout">Logout</a>
+        <h1>Hello! <%= user.fname %> <%=user.lname%></h1>
+        <div id="profileImage"><img src="/pictures/uploads/<%= user.profilepic %>"></div>
+        <a href="/profile/upload" id="upload"><button>Upload</button></a>
+    </div>
+    <div id="createNote">
+        <h3>Create new note</h3>
+        <form action="/create" method="post">
+            <textarea placeholder="Your note here" name="note" required></textarea>
+            <div><input id="createbtn" type="submit" value="Create" class="btn"></div>
+        </form>
+    </div>
+    <div>
+        <h3 style="margin-left: 5px;">My notes</h3>
+        <% if (user.notes.length === 0) { %>
+            <p style="margin-left: 5px;">No notes available</p>
+            <% } else {%>
+                <% user.notes.reverse().forEach(function(note) { %>
+                    <div id="noteHere">🔴<%= note.note %>
+                        <div><a href="/delete/<%= note._id %>">Delete</a></div>
+                        <div><a href="/edit/<%= note._id %>">Edit</a></div>
+                    </div>
+                    <% }); %>
+                <% }; %>
+                        
+    </div>
+</body>
+</html>

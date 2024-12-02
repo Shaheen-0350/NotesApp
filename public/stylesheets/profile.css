@@ -1,0 +1,59 @@
+h1 {
+    text-align: center;
+}
+
+#profileImage {
+    height: 120px;
+    width: 120px;
+    border: solid 5px;
+    margin: auto;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    padding-left: 5px;
+    font-size: 1.2em;
+}
+
+#createbtn {
+    padding: 7px;
+    font-size: 0.9em;
+}
+
+#createNote {
+    width: 50%;
+    margin-left: 7px;
+}
+
+#logout {
+    display: block;
+    text-align: right;
+    margin-top: 0;
+    margin-right: 5px;
+}
+
+body {
+    background-image: url("/pictures/bg.png");
+    background-size: contain;
+}
+
+#noteHere {
+    margin-left: 5px;
+    border-bottom: solid 3px;
+    margin-bottom: 10px;
+}
+
+textarea{
+    background-color: rgba(244, 236, 144, 0.821);
+}
+
+#upload {
+    display: block;
+    text-align: center;
+}

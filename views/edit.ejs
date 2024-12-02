@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit  note</title>
+    <style>
+        body {
+            background-image: url("/pictures/bg.png");
+        }
+        textarea {
+            width: 40%;
+            height: 150px;
+            background-color: rgba(244, 236, 144, 0.821);
+        }
+
+        h3, form {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Edit your note</h3>
+    <form action="/update" method="post">
+        <textarea name="note" required><%= note.note %></textarea>
+        <div><input type="submit" value="Update" class="btn"></div>
+        
+    </form>
+</body>
+</html>
