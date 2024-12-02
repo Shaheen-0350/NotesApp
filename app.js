@@ -117,6 +117,9 @@ app.get("/logout", function(req, res) {
 app.get("/delete/:id", isLoggedIn, async function(req, res) {
     await noteModel.deleteOne({_id: req.params.id});
     let user = await userModel.findOne({email: req.user.email});
+    let index = user.notes.indexOf(req.params.id);
+    user.notes.splice(index, 1);
+    await user.save();
     await user.populate("notes");
     res.render("profile", {user});
 });
