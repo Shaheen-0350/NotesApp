@@ -129,9 +129,9 @@ app.get("/edit/:id", isLoggedIn, async function(req, res) {
     res.render("edit", {note});
 });
 
-app.post("/update", isLoggedIn, async function(req ,res) {
+app.post("/update/:id", isLoggedIn, async function(req ,res) {
     let {note} = req.body;
-    let targetNote = await noteModel.findOne({user: req.user.userid});
+    let targetNote = await noteModel.findOne({_id: req.params.id});
     targetNote.note = note;
     await targetNote.save();
     let user = await userModel.findOne({_id: req.user.userid});

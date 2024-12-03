@@ -39,7 +39,7 @@
 </head>
 <body class="edu-au-vic-wa-nt-hand">
     <h3>Edit your note</h3>
-    <form action="/update" method="post">
+    <form action="/update/<%= note._id %>" method="post">
         <textarea name="note" required class="edu-au-vic-wa-nt-hand"><%= note.note %></textarea>
         <div><input type="submit" value="Update" class="btn edu-au-vic-wa-nt-hand"></div>
         
