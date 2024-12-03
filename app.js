@@ -138,4 +138,11 @@ app.post("/update", isLoggedIn, async function(req ,res) {
     await user.populate("notes");
     res.render("profile", {user});
 });
+
+app.get("/deleteacc/:id", isLoggedIn, async function(req, res) {
+    await userModel.deleteOne({_id: req.params.id});
+    await noteModel.deleteMany({user: req.params.id});
+    res.cookie("token", "")
+    res.redirect("/");
+})
 app.listen(9000);

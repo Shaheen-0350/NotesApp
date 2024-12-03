@@ -31,11 +31,15 @@ textarea {
     margin-left: 7px;
 }
 
-#logout {
+#logout, #deleteAcc {
     display: block;
     text-align: right;
     margin-top: 0;
     margin-right: 5px;
+}
+
+#deleteAcc {
+    color: red;
 }
 
 body {
@@ -47,6 +51,7 @@ body {
     margin-left: 5px;
     border-bottom: solid 3px;
     margin-bottom: 10px;
+    background-color: yellow;
 }
 
 textarea{
@@ -56,4 +61,26 @@ textarea{
 #upload {
     display: block;
     text-align: center;
+}
+
+.edu-au-vic-wa-nt-hand {
+  font-family: "Edu AU VIC WA NT Hand", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.btn {
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.del, .edit {
+    width: 25px;
+    height: 25px;
+}
+
+.edit {
+    margin-left: 35px;
 }

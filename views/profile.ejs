@@ -5,19 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Notes</title>
     <link rel="stylesheet" href="/stylesheets/profile.css" />
+    <link rel="icon" type="image/png" href="/pictures/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Playwrite+HR+Lijeva:wght@100..400&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="edu-au-vic-wa-nt-hand">
     <div>
         <a href="/logout" id="logout">Logout</a>
+        <a href="/deleteacc/<%= user._id %>" id="deleteAcc">Delete account</a>
         <h1>Hello! <%= user.fname %> <%=user.lname%></h1>
         <div id="profileImage"><img src="/pictures/uploads/<%= user.profilepic %>"></div>
-        <a href="/profile/upload" id="upload"><button>Upload</button></a>
+        <a href="/profile/upload" id="upload"><button class="btn edu-au-vic-wa-nt-hand">Upload</button></a>
     </div>
     <div id="createNote">
         <h3>Create new note</h3>
         <form action="/create" method="post">
-            <textarea placeholder="Your note here" name="note" required></textarea>
-            <div><input id="createbtn" type="submit" value="Create" class="btn"></div>
+            <textarea placeholder="Your note here" name="note" required class="edu-au-vic-wa-nt-hand"></textarea>
+            <div><input id="createbtn" type="submit" value="Create" class="btn edu-au-vic-wa-nt-hand"></div>
         </form>
     </div>
     <div>
@@ -27,8 +32,8 @@
             <% } else {%>
                 <% user.notes.reverse().forEach(function(note) { %>
                     <div id="noteHere">🔴<%= note.note %>
-                        <div><a href="/delete/<%= note._id %>">Delete</a></div>
-                        <div><a href="/edit/<%= note._id %>">Edit</a></div>
+                        <br /> <br />
+                        <div><a href="/delete/<%= note._id %>"><img src="/pictures/delete.png" class="del" /></a> <a href="/edit/<%= note._id %>"><img src="/pictures/edit.png" class="edit" /></a></div>
                     </div>
                     <% }); %>
                 <% }; %>
